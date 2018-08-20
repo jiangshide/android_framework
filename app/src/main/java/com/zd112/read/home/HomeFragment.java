@@ -43,7 +43,6 @@ public class HomeFragment extends BaseFragment implements BannerView.OnBannerIte
     @Override
     protected void processLogic(Bundle savedInstanceState) {
         List list = new ArrayList();
-        list.add("https://test2.etongdai.com/u/cms/www/201807/15101936v22b.png");
         list.add("https://test2.etongdai.com/u/cms/www/201712/261339026r9n.jpg");
         list.add("https://test2.etongdai.com/u/cms/www/201802/01143159ks3w.jpg");
         list.add("https://test2.etongdai.com/u/cms/www/201804/09105814rqlz.jpg");
