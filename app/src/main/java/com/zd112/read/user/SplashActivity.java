@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -16,6 +18,7 @@ import com.zd112.framework.net.helper.NetInfo;
 import com.zd112.framework.utils.PermissionUtils;
 import com.zd112.framework.utils.ViewUtils.ViewInject;
 import com.zd112.framework.view.CusButton;
+import com.zd112.framework.view.DialogView;
 import com.zd112.read.MainActivity;
 import com.zd112.read.MyApplication;
 import com.zd112.read.R;
@@ -57,12 +60,26 @@ public class SplashActivity extends BaseActivity {
                 request("update", UpdateData.class);
             }
         } else if (info.getResponseObj() instanceof UpdateData) {
-            UpdateData.Res res = ((UpdateData) info.getResponseObj()).res;
+            final UpdateData.Res res = ((UpdateData) info.getResponseObj()).res;
             if (null != res && !TextUtils.isEmpty(res.url)) {
+                if (res.status == 2) {
+                    
+                } else {
+                    loading(R.layout.update, new DialogView.DialogViewListener() {
+                        @Override
+                        public void onView(View view) {
+                            ((TextView) view.findViewById(R.id.updateText)).setText(res.content);
+                            view.findViewById(R.id.updateBtn).setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
 
-            }else{
-                request("advert", AdvertData.class);
+                                }
+                            });
+                        }
+                    }).setOutsideClose(res.status == 1).setReturn(res.status == 1);
+                }
             }
+            request("advert", AdvertData.class);
         } else if (info.getResponseObj() instanceof AdvertData) {
             AdvertData.Res res = ((AdvertData) info.getResponseObj()).res;
             if (res != null && !TextUtils.isEmpty(res.url)) {
