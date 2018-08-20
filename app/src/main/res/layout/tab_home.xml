@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <com.zd112.framework.view.BannerView
+            android:id="@+id/homeBanner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@mipmap/home_banner_fail"
+            android:focusable="true"
+            app:indicatorSpace="3dp"
+            app:selectedIndicatorColor="@color/white"
+            app:selectedIndicatorHeight="5dp"
+            app:selectedIndicatorWidth="5dp"
+            app:unSelectedIndicatorColor="@color/font_grey"
+            app:unSelectedIndicatorHeight="5dp"
+            app:unSelectedIndicatorWidth="5dp" />
+        <com.zd112.framework.view.CusListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="10dp"
+            />
+    </LinearLayout>
+</ScrollView>

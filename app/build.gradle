@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    signingConfigs {
+        etongdai {
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            storeFile file(KEY_FILE)
+            storePassword STORE_PASSWORD
+        }
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.zd112.read"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+
+    buildTypes {
+        debug {
+            // minifyEnabled enableProguard.equals('true') ? true : false
+            // useProguard false
+            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.etongdai
+        }
+        release {
+            minifyEnabled enableProguard.equals('true') ? true : false
+            zipAlignEnabled enableProguard.equals('true') ? true : false
+            shrinkResources enableProguard.equals('true') ? true : false
+//            pseudoLocalesEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.etongdai
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def newName
+            if ("".equals(DATE)) {
+                DATE = System.currentTimeSeconds()
+            }
+            def oldFile = output.outputFile
+            def outDirectory = oldFile.parent
+            if ("true".equals(project.IS_REMOTE)) {
+                outDirectory = OUTPUT_FILE
+                newName = "etongdai-${LABLE}-android-${UMENG_VALUE}-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-${DATE}-${ENVIRONMENT}-${variant.buildType.name}.apk"
+            } else {
+                if (variant.buildType.name.equals('debug')) {
+                    newName = "etongdai-android-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-debug.apk"
+                } else {
+                    newName = "etongdai-${LABLE}-android-${UMENG_VALUE}-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-${DATE}-${ENVIRONMENT}-${variant.buildType.name}.apk"
+                }
+            }
+//            output.outputFile = new File(outDirectory, newName)
+            outputFileName = newName
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':framework')
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+//    implementation 'cn.jiguang.sdk:jpush:3.1.1'  // 此处以JPush 3.1.1 版本为例。
+//    implementation 'cn.jiguang.sdk:jcore:1.1.9'  // 此处以JCore 1.1.9 版本为例
+}

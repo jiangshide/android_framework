@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zd112.framework.view.CusViewPager
+        android:id="@+id/firstFirstView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.zd112.framework.view.CusButton
+        android:id="@+id/userFirstJump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:onClick="moreRegBtn"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="15dp"
+        android:text="跳过"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:corner="360dp"
+        app:normal_color="@color/font_grey"
+        app:press_color="@color/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/userFirstBtnL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:visibility="visible">
+
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/userFirstExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="moreRegBtn"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="立即体验"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            app:corner="40dp"
+            app:normal_color="@color/alpha"
+            app:press_color="@color/alpha" />
+
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/userFirstGoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="moreRegBtn"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="注册/登录"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:corner="40dp"
+            app:normal_color="@color/colorPrimaryDark"
+            app:press_color="@color/colorPrimary" />
+    </LinearLayout>
+</FrameLayout>

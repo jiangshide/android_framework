@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.zd112.framework.view.NavigationTopView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleName="@string/user_psw_find"
+            app:leftName="@string/cancel"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="50dp"
+            android:gravity="center"
+        android:textColor="@color/font_normal"
+        android:text="若忘记手机号或没有通过手机号注册\n请去电脑端找回。" />
+
+        <com.zd112.framework.view.CusEditText
+            android:id="@+id/userFindPswInput"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/user_phone"
+            android:drawablePadding="10dp"
+            android:hint="用请输入注册的手机号码"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:maxLength="11"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.zd112.framework.view.CusEditText
+                android:id="@+id/userFindPswCheckCode"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableLeft="@mipmap/user_sms"
+                android:drawablePadding="10dp"
+                android:hint="请输入图片验证码"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/userFindPswCheckCodeImg"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:onClick="userFindPswCheckCodeImg"
+                android:scaleType="fitXY"
+                android:src="@mipmap/user_reload" />
+
+            <ProgressBar
+                android:id="@+id/userFindPswCheckCodeImgLoading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="20dp"
+                android:indeterminateDrawable="@drawable/progressbar"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line" />
+
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/userFindPswNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:onClick="userFindPswNext"
+            android:padding="10dp"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:normal_color="#025FCB"
+            app:press_color="@color/colorPrimary" />
+    </LinearLayout>

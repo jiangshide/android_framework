@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.zd112.framework.view.NavigationTopView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleName="@string/user_reg"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            />
+
+        <com.zd112.framework.view.CusEditText
+            android:id="@+id/userRegInput"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/user_phone"
+            android:drawablePadding="10dp"
+            android:hint="输入手机号码注册"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:maxLength="11"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/userRegInputTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:textColor="@color/red" />
+
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/userReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:onClick="userReg"
+            android:padding="10dp"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:normal_color="#025FCB"
+            app:press_color="@color/colorPrimary" />
+
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/userRegGoLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:onClick="userRegGoLogin"
+            android:padding="10dp"
+            android:text="已有账号去登录"
+            android:textColor="@color/font_grey"
+            android:textSize="18sp"
+            app:normal_color="#F2F2F2"
+            app:press_color="@color/font_grey"
+            app:stroke="1dp"
+            app:stroke_color="#9B9B9B" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击下一步，即表示您已阅读并同意"
+                android:textColor="#ACACAC"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:onClick="userRegGoProtocol"
+                android:text="《用户服务协议》"
+                android:textColor="#0460CB"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.etongdai.module.base.view.CusButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/userUnLockViewTipsItem"
+    android:layout_width="10dp"
+    android:layout_height="10dp"
+    android:background="@null"
+    android:enabled="false"
+    android:textColor="@color/colorPrimary"
+    app:corner="360dp"
+    app:normal_color="@color/alpha"
+    app:press_color="@color/alpha"
+    app:stroke="1dp"
+    app:stroke_color="@color/colorPrimary" />

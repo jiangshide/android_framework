@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="tab_main_title">
+        <item>@string/home</item>
+        <item>@string/book</item>
+        <item>@string/publish</item>
+        <item>@string/top</item>
+        <item>@string/find</item>
+    </array>
+
+</resources>

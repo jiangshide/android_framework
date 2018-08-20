@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/splashImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
+    <com.zd112.framework.view.CusButton
+        android:id="@+id/splashBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="7dp"
+        android:text="跳过5s"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:corner="30dp"
+        app:normal_color="@color/alpha"
+        app:press_color="@color/font_grey"
+        app:stroke="1dp"
+        app:stroke_color="@color/line" />
+</FrameLayout>

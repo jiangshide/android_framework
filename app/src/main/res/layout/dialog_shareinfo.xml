@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/moreShareInfoL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/more_user_icon" />
+
+            <TextView
+                android:id="@+id/moreShareInfoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="112**2323"
+                android:textColor="@color/font_normal"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!--<ImageView-->
+        <!--android:id="@+id/moreShareInfoDel"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBaseline="@+id/moreShareInfoL"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:padding="10dp"-->
+        <!--android:src="@mipmap/cancel_icon" />-->
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/moreShareInfoDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/moreShareInfoL"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:text="x"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            app:normal_color="@color/alpha"
+            app:press_color="@color/alpha" />
+
+        <!--<ImageView-->
+        <!--android:id="@+id/moreShareInfoQrImg"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/moreShareInfoL"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:src="@mipmap/more_qr_code" />-->
+
+        <com.zd112.framework.view.CusButton
+            android:id="@+id/moreShareInfoQrImg"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/moreShareInfoL"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:enabled="false"
+            android:padding="10dp"
+            android:text="暂无数据"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:normal_color="@color/font_grey"
+            app:press_color="@color/font_grey" />
+
+        <View
+            android:id="@+id/moreShareInfoLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_below="@+id/moreShareInfoQrImg"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/moreShareInfoLine"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/moreShareInfoMsg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/more_message" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="短信邀请"
+                    android:textColor="@color/font_normal"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/moreShareInfoWx"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/more_wechat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="微信邀请"
+                    android:textColor="@color/font_normal"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/moreShareInfoFriend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/more_pyq" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="朋友圈邀请"
+                    android:textColor="@color/font_normal"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
