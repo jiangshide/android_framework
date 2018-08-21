@@ -34,7 +34,7 @@ android {
         buildConfigField('String', 'HTTP_CACHE', "\"${HTTP_CACHE}\"")
         buildConfigField('String', 'HTTP_DOWNLOAD', "\"${HTTP_DOWNLOAD}\"")
         buildConfigField('String', 'HTTP_LOG_TAG', "\"${HTTP_LOG_TAG}\"")
-        buildConfigField('String', 'UMENG_VALUE', "\"${UMENG_VALUE}\"")
+        buildConfigField('String', 'CHANNEL', "\"${CHANNEL}\"")
         buildConfigField('String', 'SHARE_PARAM_FILE_NAME', "\"${SHARE_PARAM_FILE_NAME}\"")
         buildConfigField('String', 'WECHAT_APPID', "\"${WECHAT_APPID}\"")
         buildConfigField('String', 'WECHAT_APPID_VEST', "\"${WECHAT_APPID_VEST}\"")
@@ -70,4 +70,7 @@ dependencies {
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     implementation 'com.tencent.bugly:crashreport:latest.release' //错误日志收集
 //    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //错误日志收集 so
+//    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.4'
+//    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4'
+    implementation 'com.amap.api:location:latest.integration'//定位
 }

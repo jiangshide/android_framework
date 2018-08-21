@@ -15,6 +15,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.zd112.framework.BaseActivity;
 import com.zd112.framework.net.helper.NetInfo;
+import com.zd112.framework.service.UpdateService;
 import com.zd112.framework.utils.PermissionUtils;
 import com.zd112.framework.utils.ViewUtils.ViewInject;
 import com.zd112.framework.view.CusButton;
@@ -62,8 +63,8 @@ public class SplashActivity extends BaseActivity {
         } else if (info.getResponseObj() instanceof UpdateData) {
             final UpdateData.Res res = ((UpdateData) info.getResponseObj()).res;
             if (null != res && !TextUtils.isEmpty(res.url)) {
-                if (res.status == 2) {
-                    
+                if (res.status == 0 || res.status == 2) {
+                    startService(new Intent(getApplicationContext(), UpdateService.class).putExtra("url", res.url));
                 } else {
                     loading(R.layout.update, new DialogView.DialogViewListener() {
                         @Override
@@ -72,11 +73,13 @@ public class SplashActivity extends BaseActivity {
                             view.findViewById(R.id.updateBtn).setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-
+                                    ((CusButton) v).setText("正在下载...");
+                                    startService(new Intent(getApplicationContext(), UpdateService.class).putExtra("url", res.url));
                                 }
                             });
                         }
-                    }).setOutsideClose(res.status == 1).setReturn(res.status == 1);
+                    }).setOutsideClose(res.status != 1).setReturn(res.status == 1);
+                    return;
                 }
             }
             request("advert", AdvertData.class);
@@ -87,7 +90,7 @@ public class SplashActivity extends BaseActivity {
                     @Override
                     public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                         splashImg.setImageDrawable(resource);
-                        countDown(50).setView(splashBtn, "跳过", "s").start();
+                        countDown(5).setView(splashBtn, "跳过", "s").goActivity(MainActivity.class).start();
                     }
                 });
             } else {

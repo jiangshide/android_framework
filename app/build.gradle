@@ -53,12 +53,12 @@ android {
             def outDirectory = oldFile.parent
             if ("true".equals(project.IS_REMOTE)) {
                 outDirectory = OUTPUT_FILE
-                newName = "etongdai-${LABLE}-android-${UMENG_VALUE}-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-${DATE}-${ENVIRONMENT}-${variant.buildType.name}.apk"
+                newName = "etongdai-${LABLE}-android-${CHANNEL}-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-${DATE}-${ENVIRONMENT}-${variant.buildType.name}.apk"
             } else {
                 if (variant.buildType.name.equals('debug')) {
                     newName = "etongdai-android-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-debug.apk"
                 } else {
-                    newName = "etongdai-${LABLE}-android-${UMENG_VALUE}-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-${DATE}-${ENVIRONMENT}-${variant.buildType.name}.apk"
+                    newName = "etongdai-${LABLE}-android-${CHANNEL}-v${APP_VERSION_NAME}-${APP_VERSION_CODE}-${DATE}-${ENVIRONMENT}-${variant.buildType.name}.apk"
                 }
             }
 //            output.outputFile = new File(outDirectory, newName)

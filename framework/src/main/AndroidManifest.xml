@@ -42,5 +42,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider_paths"/>
         </provider>
+        <service android:name=".service.UpdateService"/>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="2b10b186138bddd950cb18b3a6c1f90b" />
     </application>
 </manifest>
